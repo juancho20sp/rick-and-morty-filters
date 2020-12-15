@@ -1,27 +1,25 @@
 import React from "react";
 import "./ComboBox.css";
 
-import TextField from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Select from "@material-ui/core/Select";
 
-const handleChange = () => {
-  console.log("Holiwi");
+const handleChange = (event) => {
+  const name = event.target.name;
+  console.log(name);
 };
 
 const ComboBox = (props) => {
   return (
-    <TextField
-      select
-      label={props.label}
-      value={"Hook o redux"}
-      onChange={handleChange}
-      helperText={`Seleccione un ${props.helper}`}
-      variant="filled"
-    >
-      <MenuItem key="1" value="11">
-        Holiwi
-      </MenuItem>
-    </TextField>
+    <FormControl variant="outlined">
+      <InputLabel>{props.label}</InputLabel>
+      <Select native value="asd" name={props.name} onChange={handleChange}>
+        <option value="asd">Holiwi 1</option>
+        <option value="asd">Holiwi 2</option>
+        <option value="asd">Holiwi 3</option>
+      </Select>
+    </FormControl>
   );
 };
 

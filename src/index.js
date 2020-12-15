@@ -22,7 +22,8 @@ const initialState = {
   status: "",
   species: "",
   location: "",
-  name: ""
+  name: "",
+  nextPage: 1
 };
 
 // Creamos el store

@@ -14,3 +14,6 @@ export const NAME = "NAME";
 
 // Para la lista de personajes
 export const CHARACTER_LIST = "CHARACTER_LIST";
+
+// Para la paginación de la API
+export const NEXT_PAGE = "NEXT_PAGE";

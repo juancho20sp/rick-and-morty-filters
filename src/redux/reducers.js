@@ -7,7 +7,8 @@ import {
   SPECIES,
   LOCATION,
   NAME,
-  CHARACTER_LIST
+  CHARACTER_LIST,
+  NEXT_PAGE
 } from "./types";
 
 export const reducer = (state, action) => {
@@ -66,6 +67,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         characterList: action.payload
+      };
+
+    case NEXT_PAGE:
+      return {
+        ...state,
+        nextPage: state.nextPage + 1
       };
 
     default:

@@ -7,7 +7,8 @@ import {
   SPECIES,
   LOCATION,
   NAME,
-  CHARACTER_LIST
+  CHARACTER_LIST,
+  NEXT_PAGE
 } from "./types";
 
 // Acciones para el menú
@@ -54,5 +55,10 @@ export const setName = (payload) => ({
 
 export const setCharacterList = (payload) => ({
   type: CHARACTER_LIST,
+  payload
+});
+
+export const setNextPage = (payload) => ({
+  type: NEXT_PAGE,
   payload
 });
