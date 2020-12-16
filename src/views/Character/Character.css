@@ -8,6 +8,17 @@
     font-weight: bold;
 }
 
+.character__spinner {
+    background-color: red;
+
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 /* Teléfonos pequeños */
 @media screen and (min-width: 320px) {
     .character__container {

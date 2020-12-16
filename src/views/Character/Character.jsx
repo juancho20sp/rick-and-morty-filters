@@ -8,6 +8,7 @@ import { useParams, useHistory } from "react-router-dom";
 // Custom hook
 import useFetchCharacter from "../../hooks/useFetchCharacter";
 
+import HashLoader from "react-spinners/HashLoader";
 import MyButton from "../../components/MyButton/MyButton";
 
 const Character = () => {
@@ -26,24 +27,28 @@ const Character = () => {
   }, []);
 
   return (
-    <div className="character__container">
-      {console.log(charData)}
-
-      {!loading && charData.image && (
-        <div className="character__image">
-          <img src={charData.image} alt={charData.name} />
+    <>
+      {loading && (
+        <div className="character__spinner">
+          <HashLoader size={250} color={"#ff5000"}></HashLoader>
         </div>
       )}
+      <div className="character__container">
+        {console.log(charData)}
 
-      {loading && <p>cargando</p>}
+        {!loading && charData.image && (
+          <div className="character__image">
+            <img src={charData.image} alt={charData.name} />
+          </div>
+        )}
 
-      {!loading && charData.name && (
-        <div className="character__info">
-          <p className="char__name">{charData.name}</p>
-          <p className="char__origin">Origin: {charData.origin.name}</p>
+        {!loading && charData.name && (
+          <div className="character__info">
+            <p className="char__name">{charData.name}</p>
+            <p className="char__origin">Origin: {charData.origin.name}</p>
 
-          <p className="char__status">Status: {charData.status}</p>
-          {/* <div className="character__episodes">
+            <p className="char__status">Status: {charData.status}</p>
+            {/* <div className="character__episodes">
               <p>Episodes: </p>
               {charData.episode.slice(0, 10).map((episode, idx) => (
                 <p key={idx}>
@@ -54,13 +59,17 @@ const Character = () => {
                 </p>
               ))}
             </div> */}
-        </div>
-      )}
+          </div>
+        )}
 
-      <div className="character__button">
-        <MyButton label="volver" function={history.goBack}></MyButton>
+        <div className="character__button">
+          <MyButton
+            label={loading ? "Cargando..." : "Volver"}
+            function={history.goBack}
+          ></MyButton>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

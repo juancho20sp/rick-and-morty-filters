@@ -4,3 +4,7 @@
 -   Realizar la documentación
 -   Crear transiciones
 -   Poblar los SELECT de los filtros
+-   Mensajes de error
+    - Home
+    - Character list
+    - Búsqueda sin resultados
