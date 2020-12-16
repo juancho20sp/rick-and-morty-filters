@@ -9,6 +9,7 @@ import Filters from "../../components/Filters/Filters";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import InlineFilters from "../../components/InlineFilters/InlineFilters";
 import CharacterList from "../../components/CharacterList/CharacterList";
+import MyButton from "../../components/MyButton/MyButton";
 
 const Home = () => {
   const [loading, error, characterList, fetchData] = useFetchData();
@@ -44,7 +45,13 @@ const Home = () => {
         </div>
       )}
 
-      <button onClick={fetchData}>Holiwi</button>
+      <div className="home__load--btn">
+        <MyButton
+          function={fetchData}
+          variant="contained"
+          label={loading ? "Cargando..." : "Cargar más"}
+        ></MyButton>
+      </div>
       {console.log(characterList)}
     </div>
   );

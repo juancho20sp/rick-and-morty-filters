@@ -7,9 +7,6 @@
     height: 12vh;
     width: 100%;
 
-
-    background-color: royalblue;
-
     display: grid;
     grid-template-areas: "menu title";
     grid-template: 1fr / 10% 1fr;
@@ -18,27 +15,18 @@
 }
 
 .header__icon {
-    /* background-color: fuchsia; */
     justify-self: center;
-    /* align-self: auto; */
 }
 
 .header__title {
-    /* background-color: gold; */
-
     text-shadow: 2px 3px 3px rgba(255, 80, 0, 0.49);
-
     text-align: center;
 
-
-    /* font-family: SegoeUI; */
     font-size: 25px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    /* line-height: 1.34; */
-    /* letter-spacing: normal; */
-    /* text-align: left; */
+
     color: #ff5000;
 
     grid-area: title;

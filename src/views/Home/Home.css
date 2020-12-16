@@ -23,6 +23,14 @@
     z-index: 10;
 }
 
+.home__load--btn {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Teléfonos pequeños */
 @media screen and (min-width: 320px) {
     .home__searchbar input {

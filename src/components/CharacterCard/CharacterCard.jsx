@@ -1,7 +1,7 @@
 import React from "react";
 import "./CharacterCard.css";
 
-import Button from "@material-ui/core/Button";
+import MyButton from "../MyButton/MyButton";
 
 const CharacterCard = ({ id, name, location, status, image }) => {
   return (
@@ -13,9 +13,11 @@ const CharacterCard = ({ id, name, location, status, image }) => {
           <p className="character__location">{location}</p>
           <p className="character__status">{status}</p>
         </div>
-        <Button className="card__info--button" variant="contained">
-          Ver más
-        </Button>
+        <MyButton
+          className="card__info--button"
+          variant="contained"
+          label={"Ver más"}
+        ></MyButton>
       </div>
     </div>
   );

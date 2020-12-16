@@ -66,29 +66,7 @@
 
 }
 
-.card__info--button.MuiButton-contained {
-    background-color: #FF5000;
-    border-radius: 15px;
-    color: white;
 
-    margin-bottom: 10px;
-
-    width: 60%;
-
-    align-self: center;
-
-
-
-}
-
-.card__info--button.MuiButton-contained:hover {
-    background-color: #ff5100;
-    color: black;
-
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-
-
-}
 
 /* Teléfonos pequeños */
 @media screen and (min-width: 320px) {
@@ -133,4 +111,14 @@
 }
 
 /* Desktop grande */
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+    .card__container {
+        width: 20vw;
+        height: 30vh;
+    }
+
+    .card__info--text {
+        margin-left: 15px;
+        height: 20%;
+    }
+}
