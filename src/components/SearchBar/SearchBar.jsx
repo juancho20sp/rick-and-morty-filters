@@ -3,7 +3,7 @@ import "./SearchBar.css";
 
 import TextField from "@material-ui/core/TextField";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setName } from "../../redux/actions";
 // Conectamos la barra de búsqueda al estado global
 
