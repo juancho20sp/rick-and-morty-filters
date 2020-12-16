@@ -15,8 +15,17 @@ export const reducer = (state, action) => {
   switch (action.type) {
     // Reducer del menú
     case TOGGLE_MENU:
+      if (action.payload) {
+        return {
+          ...state,
+
+          isMenuOpen: action.payload
+        };
+      }
+
       return {
         ...state,
+
         isMenuOpen: !state.isMenuOpen
       };
 

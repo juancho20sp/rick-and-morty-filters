@@ -63,32 +63,22 @@
 @media screen and (min-width: 768px) {
     .header__title {
         font-size: 47px;
-
     }
 }
 
-/*  */
-@media screen and (min-width: 810px) {
+
+/* Desktop pequeño */
+@media screen and (min-width: 992px) {
     .header__container {
         display: flex;
     }
 
-    .header__container>div>svg {
-        display: none;
-    }
-
-    .header__container>div {
-        background-color: fuchsia;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-/* Desktop pequeño */
-@media screen and (min-width: 992px) {
     .header__title {
         font-size: 70px;
+    }
+
+    .header__container>div>svg {
+        display: none;
     }
 
     .header__container {

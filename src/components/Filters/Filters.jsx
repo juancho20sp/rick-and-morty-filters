@@ -12,10 +12,20 @@ import ComboBox from "../ComboBox/ComboBox";
 const Filters = () => {
   const [isMenuOpen, toggleMenu] = useToggleMenu();
 
+  // Media Query
+  // window.onresize = () => {
+  //   if (window.innerWidth >= 992 && !isMenuOpen) {
+  //     toggleMenu(true);
+  //   }
+
+  //   if (window.innerWidth <= 992) {
+  //     toggleMenu(false);
+  //   }
+  // };
   return (
     <>
       {isMenuOpen && (
-        <div className="filters__container">
+        <div className={`filters__container ${isMenuOpen ? "show" : "hide"}`}>
           <h3 className="filters__title">Menú</h3>
           <div>
             <ComboBox label="Seleccionar estado" name="estado"></ComboBox>

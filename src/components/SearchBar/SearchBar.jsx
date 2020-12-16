@@ -28,8 +28,6 @@ const SearchBar = () => {
         className="searchbar"
         onChange={handleChange}
       ></TextField>
-
-      <p>{name}</p>
     </div>
   );
 };

@@ -17,6 +17,8 @@
     display: grid;
     grid-template-areas: "title""form""return";
     grid-template: 20% 1fr 40% / 1fr;
+
+    z-index: 250;
 }
 
 
@@ -45,7 +47,6 @@
 
 }
 
-.filters__container>div>select {}
 
 .filters__container .MuiSelect-select {
     background-color: white;
@@ -64,6 +65,10 @@
     align-self: flex-start;
 }
 
+
+.filters__container .hide {
+    display: none;
+}
 
 /* Teléfonos pequeños */
 @media screen and (min-width: 320px) {}

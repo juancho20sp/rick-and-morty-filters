@@ -1,0 +1,136 @@
+.card__container {
+    border-radius: 26px;
+    box-shadow: 0 3px 20px 0 rgba(255, 80, 0, 0.81);
+
+    color: white;
+
+
+    margin: 10px 0px;
+
+    width: 18vw;
+    height: 40vh;
+
+    justify-self: center;
+    position: relative;
+
+    /* display: grid;
+    grid-template-areas: "photo""info";
+    grid-template: 60% 1fr / 1fr; */
+}
+
+.card__img {
+    border-radius: 26px;
+    box-shadow: 0 3px 15px 0 rgba(255, 80, 0, 0.72);
+
+    height: 100%;
+    width: 100%;
+}
+
+.card__info {
+    background-image: url('../../assets/hero-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.4) 70%, rgba(255, 255, 255, 0.4) 100%);
+
+    border-radius: inherit;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.3s;
+}
+
+.card__info:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.card__info--text {
+    /* background-color: red; */
+    margin: 5px 7px;
+    height: 20%;
+
+
+}
+
+.card__info--button.MuiButton-contained {
+    background-color: #FF5000;
+    border-radius: 15px;
+    color: white;
+
+    margin-bottom: 10px;
+
+    width: 60%;
+
+    align-self: center;
+
+
+
+}
+
+.card__info--button.MuiButton-contained:hover {
+    background-color: #ff5100;
+    color: black;
+
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+
+
+}
+
+/* Teléfonos pequeños */
+@media screen and (min-width: 320px) {
+    .card__container {
+        margin: 20px 0px;
+
+        width: 80vw;
+        height: 40vh;
+    }
+
+    .card__info--text {
+        height: 30%;
+    }
+}
+
+/* Teléfonos promedio */
+@media screen and (min-width: 480px) {
+    .card__container {
+        width: 35vw;
+        height: 35vh;
+    }
+}
+
+/* Tablet promedio */
+@media screen and (min-width: 768px) {
+    .card__container {
+        width: 40vw;
+        height: 40vh;
+    }
+
+    .card__info--text {
+        height: 20%;
+    }
+}
+
+/* Desktop pequeño */
+@media screen and (min-width: 992px) {
+    .card__container {
+        width: 28vw;
+        height: 28vh;
+    }
+}
+
+/* Desktop grande */
+@media screen and (min-width: 1200px) {}
