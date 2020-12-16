@@ -1,5 +1,3 @@
 -   Intersection observer en los filtros de Desktop
 -   Evitar tantos llamados a la API
 -   Realizar la documentación
--   Mensajes de error
-    - Búsqueda sin resultados
