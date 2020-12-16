@@ -13,14 +13,11 @@ import ComboBox from "../ComboBox/ComboBox";
 import { statusList } from "../ComboBox/Status";
 
 const Filters = () => {
-  console.log(statusList);
-
   const [isMenuOpen, toggleMenu] = useToggleMenu();
   const [loading, err, locations, fetchLocations] = useFetchLocations();
 
   useEffect(() => {
     fetchLocations();
-    console.log(locations[1]);
   }, []);
 
   return (
@@ -39,7 +36,7 @@ const Filters = () => {
               label="Seleccionar ubicación"
               name="ubicacion"
               test="asd"
-              optionList={locations[1]}
+              options={locations[0]}
             ></ComboBox>
           </div>
 

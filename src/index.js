@@ -12,10 +12,25 @@ import { Provider } from "react-redux";
 // Traemos el reducer
 import { reducer } from "./redux/reducers";
 
+const options = [
+  {
+    id: 1,
+    name: "Alive"
+  },
+  {
+    id: 2,
+    name: "Dead"
+  },
+  {
+    id: 3,
+    name: "Unknown"
+  }
+];
+
 // Creamos el estado inicial
 const initialState = {
   isMenuOpen: false,
-  statusOptions: [],
+  statusOptions: options,
   speciesOptions: [],
   locationOptions: [],
   characterList: [],
