@@ -10,6 +10,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { setStatus, setLocation } from "../../redux/actions";
 
 const ComboBox = (props) => {
+  const state = useSelector((state) => console.log(state));
+
   // Redux
   const status = useSelector((state) => state.status);
   const location = useSelector((state) => state.location);
@@ -39,18 +41,6 @@ const ComboBox = (props) => {
   };
 
   // Limpiar filtros
-
-  const handleReset = () => {
-    dispatcher(setStatus(""));
-    dispatcher(setLocation(""));
-
-    setValue("");
-  };
-
-  if (props.clean) {
-    handleReset();
-    console.log("filtrosLimpios");
-  }
 
   return (
     <FormControl variant="outlined">

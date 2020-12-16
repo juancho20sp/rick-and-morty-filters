@@ -57,7 +57,10 @@ const useFetchLocations = () => {
       //     results.results
       //   );
 
-      dispatcher(setLocationOptions(results.results));
+      if (!locations.length) {
+        dispatcher(setLocationOptions(results.results));
+        setLocationList(results.results);
+      }
     } catch (err) {
       // Desativamos el loader
       setLoading(false);

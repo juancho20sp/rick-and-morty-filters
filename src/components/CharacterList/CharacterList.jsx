@@ -1,11 +1,9 @@
 import React, { useState, useMemo, useEffect } from "react";
 import "./CharacterList.css";
 
-// Redux
-import { useDispatch } from "react-redux";
-import { setStatus, setLocation, setName } from "../../redux/actions";
-
+// Custom hooks
 import useFilterCharacters from "../../hooks/useFilterCharacters";
+import useResetFilters from "../../hooks/useResetFilters";
 
 import CharacterCard from "../CharacterCard/CharacterCard";
 import MyButton from "../MyButton/MyButton";
@@ -15,18 +13,7 @@ const CharacterList = () => {
   const [filteredCharacters] = useFilterCharacters();
 
   // Resetear filtros
-  const dispatcher = useDispatch();
-
-  const resetFilters = () => {
-    // Reseteamos nombre
-    dispatcher(setName(""));
-
-    // Reseteamos estado
-    dispatcher(setStatus(""));
-
-    // Reseteamos ubicación
-    dispatcher(setLocation(""));
-  };
+  const [resetFilters] = useResetFilters();
 
   return (
     <>

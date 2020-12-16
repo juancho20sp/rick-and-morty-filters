@@ -4,6 +4,7 @@ import "./Filters.css";
 // Custom hooks
 import useToggleMenu from "../../hooks/useToggleMenu";
 import useFetchLocations from "../../hooks/useFetchLocations";
+import useResetFilters from "../../hooks/useResetFilters";
 
 import Button from "@material-ui/core/Button";
 
@@ -24,13 +25,8 @@ const Filters = () => {
     fetchLocations();
   }, []);
 
-  // Función que limpia filtros
-  const [cleanFilters, setCleanFilters] = useState(false);
-
-  const cleanClicked = () => {
-    console.log("Cleaning filters");
-    setCleanFilters(true);
-  };
+  // Reseteamos filtros
+  const [resetFilters] = useResetFilters();
 
   return (
     <>
@@ -42,20 +38,18 @@ const Filters = () => {
               label="Seleccionar estado"
               name="estado"
               options={statusList}
-              clean={cleanFilters}
             ></ComboBox>
             {/* <ComboBox label="Seleccionar especie" name="especie"></ComboBox> */}
             <ComboBox
               label="Seleccionar ubicación"
               name="ubicacion"
               options={locations[0]}
-              clean={cleanFilters}
             ></ComboBox>
 
             <MyButton
               variant="contained"
               label="Limpiar filtros"
-              function={cleanClicked}
+              function={resetFilters}
             ></MyButton>
           </div>
 

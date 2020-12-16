@@ -23,7 +23,7 @@
     background-color: whitesmoke;
     border-radius: 5px;
 
-    min-width: 300px;
+    min-width: 250px;
 }
 
 .inlineFilters__container select {
@@ -55,4 +55,8 @@
 }
 
 /* Desktop grande */
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+    .inlineFilters__container input {
+        min-width: 300px;
+    }
+}
