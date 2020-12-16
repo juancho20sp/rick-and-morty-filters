@@ -6,7 +6,7 @@ import MyButton from "../MyButton/MyButton";
 const CharacterCard = ({ id, name, location, status, image }) => {
   return (
     <div className="card__container">
-      <img src={image} alt={`${name} photo`} className="card__img" />
+      <img src={image} alt={`${name}`} className="card__img" />
       <div className="card__info">
         <div className="card__info--text">
           <p className="character__name">{name}</p>
