@@ -1,0 +1,46 @@
+.notFound__container {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFound__container p {
+    margin-bottom: 15px;
+}
+
+/* Teléfonos pequeños */
+@media screen and (min-width: 320px) {
+    .notFound__container {
+        font-size: 1.3rem;
+    }
+}
+
+/* Teléfonos promedio */
+@media screen and (min-width: 480px) {
+    .notFound__container {
+        font-size: 1.45rem;
+    }
+}
+
+/* Tablet promedio */
+@media screen and (min-width: 768px) {
+    .notFound__container {
+        font-size: 1.6rem;
+
+        width: 60vw;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop pequeño */
+@media screen and (min-width: 992px) {
+    .notFound__container {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop grande */
+@media screen and (min-width: 1200px) {}
