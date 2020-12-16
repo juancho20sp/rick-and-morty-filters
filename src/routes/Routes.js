@@ -7,6 +7,7 @@ const Routes = {
   character: {
     id: 1,
     path: "/characters/:charId",
+    shortPath: "/characters",
     name: "character"
   }
 };
