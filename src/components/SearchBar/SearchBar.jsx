@@ -9,7 +9,7 @@ import { setName } from "../../redux/actions";
 
 const SearchBar = () => {
   // Taremos 'name' del estado global
-  const name = useSelector((state) => state.name);
+  // const name = useSelector((state) => state.name);
 
   // Creamos el dispatcher
   const dispatcher = useDispatch();

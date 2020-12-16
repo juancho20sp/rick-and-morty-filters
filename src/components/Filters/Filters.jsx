@@ -6,7 +6,6 @@ import useToggleMenu from "../../hooks/useToggleMenu";
 
 import Button from "@material-ui/core/Button";
 
-import SearchBar from "../SearchBar/SearchBar";
 import ComboBox from "../ComboBox/ComboBox";
 
 const Filters = () => {

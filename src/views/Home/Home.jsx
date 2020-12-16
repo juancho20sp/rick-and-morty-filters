@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 
 // Custom Hooks
@@ -22,6 +22,8 @@ const Home = () => {
   return (
     <div>
       <Filters></Filters>
+
+      {console.log(error)}
 
       {!loading && (
         <div className="home__searchbar">
