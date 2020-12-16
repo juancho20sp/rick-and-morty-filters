@@ -7,11 +7,12 @@ import Select from "@material-ui/core/Select";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { setStatus, setSpecies, setLocation } from "../../redux/actions";
+import { setStatus, setLocation } from "../../redux/actions";
 
 const ComboBox = (props) => {
   // Redux
-  const state = useSelector((state) => console.log(state));
+  const status = useSelector((state) => state.status);
+  const location = useSelector((state) => state.location);
   const dispatcher = useDispatch();
 
   // Hook para controlar el combo

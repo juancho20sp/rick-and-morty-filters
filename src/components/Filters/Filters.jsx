@@ -10,10 +10,13 @@ import Button from "@material-ui/core/Button";
 import ComboBox from "../ComboBox/ComboBox";
 import MyButton from "../MyButton/MyButton";
 
-// Valores del combo
-import { statusList } from "../ComboBox/Status";
+// Redux
+import { useSelector } from "react-redux";
 
 const Filters = () => {
+  // Lista de status
+  const statusList = useSelector((state) => state.statusOptions);
+
   const [isMenuOpen, toggleMenu] = useToggleMenu();
   const [loading, err, locations, fetchLocations] = useFetchLocations();
 

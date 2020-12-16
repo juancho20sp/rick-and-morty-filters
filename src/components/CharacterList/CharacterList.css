@@ -1,5 +1,27 @@
+.characterList__error {
+    /* background-color: red; */
+
+
+
+    height: 40vh;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.characterList__error>p {
+    margin-bottom: 25px;
+}
+
+
 .characterList__container {
     overflow: hidden;
+
+    /* background-color: blue; */
 
     max-width: auto;
 
@@ -9,10 +31,17 @@
     align-items: center;
 }
 
+
+
+
 /* Teléfonos pequeños */
 @media screen and (min-width: 320px) {
-    .characterList__container {
+    .characterList__error {
+        font-size: 1.3rem;
+    }
 
+
+    .characterList__container {
         display: grid;
         grid-template: auto / repeat(1, 1fr);
         justify-content: space-evenly;
@@ -32,10 +61,19 @@
 }
 
 /* Tablet promedio */
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    .characterList__error {
+        font-size: 1.8rem;
+        width: 50vw;
+    }
+}
 
 /* Desktop pequeño */
 @media screen and (min-width: 992px) {
+    .characterList__error {
+        font-size: 2rem;
+    }
+
     .characterList__container {
         display: grid;
         grid-template: auto / repeat(3, 1fr);

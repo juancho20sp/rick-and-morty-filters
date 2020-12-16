@@ -45,9 +45,13 @@ const Character = () => {
         {!loading && charData.name && (
           <div className="character__info">
             <p className="char__name">{charData.name}</p>
-            <p className="char__origin">Origin: {charData.origin.name}</p>
+            <p className="char__origin">
+              <b>Origin</b>: {charData.origin.name}
+            </p>
 
-            <p className="char__status">Status: {charData.status}</p>
+            <p className="char__status">
+              <b>Status</b>: {charData.status}
+            </p>
             {/* <div className="character__episodes">
               <p>Episodes: </p>
               {charData.episode.slice(0, 10).map((episode, idx) => (

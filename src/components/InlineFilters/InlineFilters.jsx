@@ -7,10 +7,13 @@ import useFetchLocations from "../../hooks/useFetchLocations";
 import SearchBar from "../SearchBar/SearchBar";
 import ComboBox from "../ComboBox/ComboBox";
 
-// Valores del combo
-import { statusList } from "../ComboBox/Status";
+// Redux
+import { useSelector } from "react-redux";
 
 const InlineFilters = () => {
+  // Lista de status
+  const statusList = useSelector((state) => state.statusOptions);
+
   const [loading, err, locations, fetchLocations] = useFetchLocations();
 
   useEffect(() => {

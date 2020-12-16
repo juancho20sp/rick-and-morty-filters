@@ -2,57 +2,53 @@ import React, { useState, useMemo, useEffect } from "react";
 import "./CharacterList.css";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setStatus, setLocation, setName } from "../../redux/actions";
 
-import useFetchData from "../../hooks/useFetchData";
+import useFilterCharacters from "../../hooks/useFilterCharacters";
 
 import CharacterCard from "../CharacterCard/CharacterCard";
-// import useFetchCharacter from "../../hooks/useFetchCharacter";
+import MyButton from "../MyButton/MyButton";
 
 const CharacterList = () => {
-  // Traemos los personajes
-  const characters = useSelector((state) => state.characterList);
+  // Filtros
+  const [filteredCharacters] = useFilterCharacters();
 
-  // Query para el filtro por nombre
-  const name = useSelector((state) => state.name);
+  // Resetear filtros
+  const dispatcher = useDispatch();
 
-  // Filtro por ubicación
-  const location = useSelector((state) => state.location);
+  const resetFilters = () => {
+    // Reseteamos nombre
+    dispatcher(setName(""));
 
-  // Filtro por estado
-  const status = useSelector((state) => state.status);
+    // Reseteamos estado
+    dispatcher(setStatus(""));
 
-  const [filteredCharacters, setFilteredCharacters] = useState(characters);
-
-  useMemo(() => {
-    let result = characters.filter((char) => {
-      return char.name.toLowerCase().includes(name.toLowerCase());
-    });
-
-    if (location.length > 0) {
-      result = result.filter((char) => {
-        return char.location.name
-          .toLowerCase()
-          .includes(location.toLowerCase());
-      });
-    }
-
-    setFilteredCharacters(result);
-  }, [characters, name, location]);
+    // Reseteamos ubicación
+    dispatcher(setLocation(""));
+  };
 
   return (
-    <div className="characterList__container">
-      {filteredCharacters.map((char) => (
-        <CharacterCard
-          id={char.id}
-          name={char.name}
-          location={char.location.name}
-          status={char.status}
-          image={char.image}
-          key={char.id}
-        ></CharacterCard>
-      ))}
-    </div>
+    <>
+      {filteredCharacters.length === 0 && (
+        <div className="characterList__error">
+          <p>Ups! Prueba con menos filtros o carga más personajes</p>
+          <MyButton label="Limpiar filtros" function={resetFilters}></MyButton>
+        </div>
+      )}
+      <div className="characterList__container">
+        {filteredCharacters.map((char) => (
+          <CharacterCard
+            id={char.id}
+            name={char.name}
+            location={char.location.name}
+            status={char.status}
+            image={char.image}
+            key={char.id}
+          ></CharacterCard>
+        ))}
+      </div>
+    </>
   );
 };
 
