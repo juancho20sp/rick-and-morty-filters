@@ -1,9 +1,6 @@
 .character__container {
-    /* background-color: red; */
-
     display: grid;
     grid-template-areas: "photo""info""button";
-    /* justify-content: center; */
 }
 
 
@@ -18,8 +15,6 @@
     }
 
     .character__image {
-        /* background-color: royalblue; */
-
         padding: 10px;
 
         grid-area: photo;
@@ -52,7 +47,6 @@
         grid-area: button;
 
         width: 100%;
-        /* background-color: rgb(170, 106, 106); */
 
         display: flex;
         justify-content: center;
@@ -72,54 +66,28 @@
         grid-template-areas: "photo info""button button";
     }
 
-    .character__image {
-        /* background-color: royalblue; */
-
-        padding: 10px;
-
-        grid-area: photo;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .character__image img {
-        border-radius: 26px;
-        box-shadow: 0 3px 15px 0 rgba(255, 80, 0, 0.9);
-
-        width: 90%;
-        height: 90%;
-    }
-
     .character__info {
-        /* background-color: brown; */
-
-        justify-self: flex-start;
-
         width: 100%;
-        margin-left: 10%;
 
-        grid-area: info;
-        display: flex;
-        flex-direction: column;
         justify-content: space-evenly;
         align-items: flex-start;
     }
 
-    .character__button {
-        grid-area: button;
-
-        width: 100%;
-        /* background-color: rgb(170, 106, 106); */
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 /* Desktop pequeño */
 @media screen and (min-width: 992px) {}
 
 /* Desktop grande */
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+    .character__image img {
+        width: 70%;
+        height: 90%;
+    }
+
+    .character__info {
+        width: auto;
+    }
+
+
+}

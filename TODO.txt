@@ -2,6 +2,5 @@
 -   Evitar tantos llamados a la API
 -   Implementar los filtros
 -   Realizar la documentación
--   Crear la vista de cada personaje
 -   Crear transiciones
 -   Poblar los SELECT de los filtros
