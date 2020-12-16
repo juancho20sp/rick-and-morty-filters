@@ -10,6 +10,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import InlineFilters from "../../components/InlineFilters/InlineFilters";
 import CharacterList from "../../components/CharacterList/CharacterList";
 import MyButton from "../../components/MyButton/MyButton";
+import ErrorLoading from "../../components/ErrorLoading/ErrorLoading";
 
 const Home = () => {
   // Hook para traer usuarios
@@ -29,26 +30,26 @@ const Home = () => {
   return (
     <div>
       <Filters></Filters>
+      {/* Mostramos el error (si lo hay) */}
+      {error && <ErrorLoading></ErrorLoading>}
 
-      {console.log(error)}
-
-      {!loading && (
+      {!loading && !error && (
         <div className="home__searchbar">
           <SearchBar></SearchBar>
         </div>
       )}
 
       {/* Solo se renderiza si la medida del media query es mayor a 992 */}
-      <InlineFilters></InlineFilters>
+      {!loading && !error && <InlineFilters></InlineFilters>}
 
       {/* Lista de personajes */}
-      {loading && (
+      {loading && !error && (
         <div className="home__spinner">
           <HashLoader size={250} color={"#ff5000"}></HashLoader>
         </div>
       )}
 
-      {!loading && (
+      {!loading && !error && (
         <div className="home__characters">
           <CharacterList></CharacterList>
         </div>
@@ -61,7 +62,6 @@ const Home = () => {
           label={loading ? "Cargando..." : "Cargar más"}
         ></MyButton>
       </div>
-      {console.log(characterList)}
     </div>
   );
 };

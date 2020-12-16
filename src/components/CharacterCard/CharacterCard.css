@@ -108,6 +108,10 @@
         width: 28vw;
         height: 28vh;
     }
+
+    .card__info--text {
+        margin-bottom: 20px;
+    }
 }
 
 /* Desktop grande */

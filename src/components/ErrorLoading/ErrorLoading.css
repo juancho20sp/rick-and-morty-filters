@@ -1,0 +1,41 @@
+.load__error {
+    /* background-color: red; */
+
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.load__error p {
+    margin-bottom: 20px;
+}
+
+/* Teléfonos pequeños */
+@media screen and (min-width: 320px) {
+    .load__error {
+        font-size: 1.3rem;
+    }
+}
+
+/* Teléfonos promedio */
+@media screen and (min-width: 480px) {}
+
+/* Tablet promedio */
+@media screen and (min-width: 768px) {
+    .load__error {
+        font-size: 1.6rem;
+    }
+}
+
+/* Desktop pequeño */
+@media screen and (min-width: 992px) {
+    .load__error {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop grande */
+@media screen and (min-width: 1200px) {}

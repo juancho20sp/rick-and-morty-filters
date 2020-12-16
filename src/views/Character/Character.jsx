@@ -10,6 +10,7 @@ import useFetchCharacter from "../../hooks/useFetchCharacter";
 
 import HashLoader from "react-spinners/HashLoader";
 import MyButton from "../../components/MyButton/MyButton";
+import ErrorLoading from "../../components/ErrorLoading/ErrorLoading";
 
 const Character = () => {
   // Traemos el ID del personaje de la URL
@@ -30,7 +31,9 @@ const Character = () => {
 
   return (
     <>
-      {loading && (
+      {err && !loading && <ErrorLoading></ErrorLoading>}
+
+      {loading && !err && (
         <div className="character__spinner">
           <HashLoader size={250} color={"#ff5000"}></HashLoader>
         </div>
