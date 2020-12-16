@@ -18,16 +18,20 @@ const InlineFilters = () => {
 
   useEffect(() => {
     fetchLocations();
+
+    return () => "";
   }, []);
 
   return (
     <div className="inlineFilters__container" id="sticky-bar">
-      {console.log(locations)}
       <SearchBar></SearchBar>
       <ComboBox
         label="Seleccionar estado"
         name="estado"
         options={statusList}
+        key="1"
+        loading={loading}
+        error={err}
       ></ComboBox>
       {/* <ComboBox label="Seleccionar especie" name="especie"></ComboBox> */}
       <ComboBox
@@ -35,6 +39,9 @@ const InlineFilters = () => {
         name="ubicacion"
         test="asd"
         options={locations.length ? locations[0] : [1, 2, 3]}
+        key="2"
+        loading={loading}
+        error={err}
       ></ComboBox>
     </div>
   );

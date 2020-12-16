@@ -25,8 +25,6 @@ const Header = () => {
       <Link to={Routes.home.path}>
         <h1 className="header__title">Houm | Rick and Morty</h1>
       </Link>
-
-      {console.log(isMenuOpen)}
     </div>
   );
 };

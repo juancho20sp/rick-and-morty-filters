@@ -4,25 +4,25 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setLocationOptions } from "../redux/actions";
 
-const recursiveLocation = async (URL, finalResults) => {
-  try {
-    let results = await fetch(URL);
-    results = await results.json();
+// const recursiveLocation = async (URL, finalResults) => {
+//   try {
+//     let results = await fetch(URL);
+//     results = await results.json();
 
-    finalResults = [].concat(finalResults, results.results);
+//     finalResults = [].concat(finalResults, results.results);
 
-    if (results.info.next == null) {
-      return finalResults;
-    }
+//     if (results.info.next == null) {
+//       return finalResults;
+//     }
 
-    return await recursiveLocation(results.info.next, finalResults);
-  } catch (err) {
-    console.log(err);
-  }
-};
+//     return await recursiveLocation(results.info.next, finalResults);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 
 const useFetchLocations = () => {
-  console.log("Fetching locations...");
+  // console.log("Fetching locations...");
   // Redux
   const locations = useSelector((state) => state.locationOptions);
   const dispatcher = useDispatch();
@@ -32,9 +32,6 @@ const useFetchLocations = () => {
 
   //   Hook para el mensaje de error
   const [err, setErr] = useState("");
-
-  // Hook para la lista de ubicaciones
-  const [locationList, setLocationList] = useState([]);
 
   //   Llamamos la API
   const fetchLocations = async () => {
@@ -49,8 +46,8 @@ const useFetchLocations = () => {
       setLoading(false);
 
       //   Agregamos los resultados al estado global
-      console.log(results);
-      console.log(results.results);
+      // console.log(results);
+      // console.log(results.results);
 
       //   let finalResults = await recursiveLocation(
       //     results.info.next,
@@ -59,7 +56,6 @@ const useFetchLocations = () => {
 
       if (!locations.length) {
         dispatcher(setLocationOptions(results.results));
-        setLocationList(results.results);
       }
     } catch (err) {
       // Desativamos el loader

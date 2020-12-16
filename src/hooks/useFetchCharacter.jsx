@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useFetchCharacter = (id) => {
   console.log("Fetching character...");

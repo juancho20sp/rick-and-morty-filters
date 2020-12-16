@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Filters.css";
 
 // Custom hooks
@@ -38,12 +38,16 @@ const Filters = () => {
               label="Seleccionar estado"
               name="estado"
               options={statusList}
+              loading={loading}
+              error={err}
             ></ComboBox>
             {/* <ComboBox label="Seleccionar especie" name="especie"></ComboBox> */}
             <ComboBox
               label="Seleccionar ubicación"
               name="ubicacion"
               options={locations[0]}
+              loading={loading}
+              error={err}
             ></ComboBox>
 
             <MyButton

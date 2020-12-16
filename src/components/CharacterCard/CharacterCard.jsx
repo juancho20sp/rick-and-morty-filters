@@ -11,7 +11,7 @@ const CharacterCard = ({ id, name, location, status, image }) => {
   const history = useHistory();
   const handleClick = useCallback(() => {
     history.push(`${Routes.character.shortPath}/${id}`);
-  }, [id]);
+  }, [id, history]);
 
   return (
     <div className="card__container">

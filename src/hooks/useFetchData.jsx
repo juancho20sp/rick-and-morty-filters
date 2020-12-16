@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCharacterList, setNextPage } from "../redux/actions";
 
 const useFetchData = () => {
-  console.log("Fetching...");
+  // console.log("Fetching...");
 
   // Redux
   const globalState = useSelector((state) => state);

@@ -6,15 +6,11 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setStatus, setLocation } from "../../redux/actions";
 
 const ComboBox = (props) => {
-  const state = useSelector((state) => console.log(state));
-
   // Redux
-  const status = useSelector((state) => state.status);
-  const location = useSelector((state) => state.location);
   const dispatcher = useDispatch();
 
   // Hook para controlar el combo
@@ -23,7 +19,6 @@ const ComboBox = (props) => {
   const handleChange = (event) => {
     const name = event.target.name;
     const newValue = event.target.value;
-    console.log(name, event.target.value);
 
     switch (name) {
       case "estado":
@@ -51,7 +46,10 @@ const ComboBox = (props) => {
         {props.options &&
           props.options.map((option) => {
             return (
-              <option value={option.name} key={option.id}>
+              <option
+                key={Math.floor(Math.random() * 10000000)}
+                value={option.name}
+              >
                 {option.name}
               </option>
             );
