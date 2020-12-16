@@ -1,4 +1,6 @@
 import React from "react";
+import "./Layout.css";
+
 import Header from "../components/Header/Header";
 
 const Layout = (props) => {

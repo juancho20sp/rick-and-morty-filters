@@ -30,7 +30,9 @@ const Character = () => {
       {console.log(charData)}
 
       {!loading && charData.image && (
-        <img src={charData.image} alt={charData.name} />
+        <div className="character__image">
+          <img src={charData.image} alt={charData.name} />
+        </div>
       )}
 
       {loading && <p>cargando</p>}
@@ -39,22 +41,25 @@ const Character = () => {
         <div className="character__info">
           <p className="char__name">{charData.name}</p>
           <p className="char__origin">Origin: {charData.origin.name}</p>
+
           <p className="char__status">Status: {charData.status}</p>
-          <div className="character__episodes">
-            <p>Episodes: </p>
-            {charData.episode.slice(0, 10).map((episode, idx) => (
-              <p key={idx}>
-                {episode.replace(
-                  "https://rickandmortyapi.com/api/episode/",
-                  ""
-                )}
-              </p>
-            ))}
-          </div>
+          {/* <div className="character__episodes">
+              <p>Episodes: </p>
+              {charData.episode.slice(0, 10).map((episode, idx) => (
+                <p key={idx}>
+                  {episode.replace(
+                    "https://rickandmortyapi.com/api/episode/",
+                    ""
+                  )}
+                </p>
+              ))}
+            </div> */}
         </div>
       )}
 
-      <MyButton label="volver" function={history.goBack}></MyButton>
+      <div className="character__button">
+        <MyButton label="volver" function={history.goBack}></MyButton>
+      </div>
     </div>
   );
 };
