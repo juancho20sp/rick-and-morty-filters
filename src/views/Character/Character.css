@@ -9,8 +9,6 @@
 }
 
 .character__spinner {
-    background-color: red;
-
     height: 90%;
 
     display: flex;

@@ -23,6 +23,7 @@ const initialState = {
   species: "",
   location: "",
   name: "",
+  filteredCharacters: [],
   nextPage: 1
 };
 

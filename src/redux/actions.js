@@ -8,7 +8,8 @@ import {
   LOCATION,
   NAME,
   CHARACTER_LIST,
-  NEXT_PAGE
+  NEXT_PAGE,
+  FILTERED_CHARACTERS
 } from "./types";
 
 // Acciones para el menú
@@ -60,5 +61,10 @@ export const setCharacterList = (payload) => ({
 
 export const setNextPage = (payload) => ({
   type: NEXT_PAGE,
+  payload
+});
+
+export const setFilteredCharacters = (payload) => ({
+  type: FILTERED_CHARACTERS,
   payload
 });

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "./Home.css";
 
 // Custom Hooks
@@ -12,12 +12,19 @@ import CharacterList from "../../components/CharacterList/CharacterList";
 import MyButton from "../../components/MyButton/MyButton";
 
 const Home = () => {
+  // Hook para traer usuarios
   const [loading, error, characterList, fetchData] = useFetchData();
 
   // Primer renderizado del componente
   useEffect(() => {
-    fetchData();
+    if (characterList.length === 0) {
+      fetchData();
+    }
+
+    return () => {};
   }, []);
+
+  // <-------------------------->
 
   return (
     <div>

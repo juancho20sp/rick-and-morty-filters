@@ -8,7 +8,8 @@ import {
   LOCATION,
   NAME,
   CHARACTER_LIST,
-  NEXT_PAGE
+  NEXT_PAGE,
+  FILTERED_CHARACTERS
 } from "./types";
 
 export const reducer = (state, action) => {
@@ -82,6 +83,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         nextPage: state.nextPage + 1
+      };
+
+    case FILTERED_CHARACTERS:
+      return {
+        ...state,
+        filteredCharacters: action.payload
       };
 
     default:

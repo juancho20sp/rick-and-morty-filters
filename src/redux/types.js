@@ -17,3 +17,6 @@ export const CHARACTER_LIST = "CHARACTER_LIST";
 
 // Para la paginación de la API
 export const NEXT_PAGE = "NEXT_PAGE";
+
+// Para los filtros
+export const FILTERED_CHARACTERS = "FILTERED_CHARACTERS";

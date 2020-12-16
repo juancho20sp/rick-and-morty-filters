@@ -24,6 +24,8 @@ const Character = () => {
   // En el primer render traemos la información
   useEffect(() => {
     fetchCharacterData();
+
+    return () => console.log("unmount");
   }, []);
 
   return (
@@ -34,8 +36,6 @@ const Character = () => {
         </div>
       )}
       <div className="character__container">
-        {console.log(charData)}
-
         {!loading && charData.image && (
           <div className="character__image">
             <img src={charData.image} alt={charData.name} />

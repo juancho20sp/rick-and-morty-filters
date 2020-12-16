@@ -10,7 +10,6 @@ const CharacterCard = ({ id, name, location, status, image }) => {
   // Hooks del router
   const history = useHistory();
   const handleClick = useCallback(() => {
-    console.log(id);
     history.push(`${Routes.character.shortPath}/${id}`);
   }, [id]);
 
