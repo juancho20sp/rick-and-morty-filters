@@ -26,7 +26,7 @@ const InlineFilters = () => {
         name="estado"
         options={statusList}
       ></ComboBox>
-      <ComboBox label="Seleccionar especie" name="especie"></ComboBox>
+      {/* <ComboBox label="Seleccionar especie" name="especie"></ComboBox> */}
       <ComboBox
         label="Seleccionar ubicación"
         name="ubicacion"

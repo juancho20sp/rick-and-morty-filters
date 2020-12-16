@@ -31,14 +31,11 @@ const options = [
 const initialState = {
   isMenuOpen: false,
   statusOptions: options,
-  speciesOptions: [],
   locationOptions: [],
   characterList: [],
   status: "",
-  species: "",
   location: "",
   name: "",
-  filteredCharacters: [],
   nextPage: 1
 };
 

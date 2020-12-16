@@ -12,16 +12,44 @@ import { setStatus, setSpecies, setLocation } from "../../redux/actions";
 const ComboBox = (props) => {
   // Redux
   const state = useSelector((state) => console.log(state));
+  const dispatcher = useDispatch();
 
   // Hook para controlar el combo
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
     const name = event.target.name;
+    const newValue = event.target.value;
     console.log(name, event.target.value);
+
+    switch (name) {
+      case "estado":
+        dispatcher(setStatus(newValue));
+        break;
+
+      case "ubicacion":
+        dispatcher(setLocation(newValue));
+        break;
+      default:
+        break;
+    }
 
     setValue(event.target.value);
   };
+
+  // Limpiar filtros
+
+  const handleReset = () => {
+    dispatcher(setStatus(""));
+    dispatcher(setLocation(""));
+
+    setValue("");
+  };
+
+  if (props.clean) {
+    handleReset();
+    console.log("filtrosLimpios");
+  }
 
   return (
     <FormControl variant="outlined">

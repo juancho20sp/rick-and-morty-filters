@@ -22,11 +22,13 @@
 .inlineFilters__container input {
     background-color: whitesmoke;
     border-radius: 5px;
+
+    min-width: 300px;
 }
 
 .inlineFilters__container select {
     background-color: whitesmoke;
-    min-width: 200px;
+    min-width: 300px;
 }
 
 /* Teléfonos pequeños */

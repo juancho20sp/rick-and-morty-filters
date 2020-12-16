@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Filters.css";
 
 // Custom hooks
@@ -8,6 +8,7 @@ import useFetchLocations from "../../hooks/useFetchLocations";
 import Button from "@material-ui/core/Button";
 
 import ComboBox from "../ComboBox/ComboBox";
+import MyButton from "../MyButton/MyButton";
 
 // Valores del combo
 import { statusList } from "../ComboBox/Status";
@@ -20,6 +21,14 @@ const Filters = () => {
     fetchLocations();
   }, []);
 
+  // Función que limpia filtros
+  const [cleanFilters, setCleanFilters] = useState(false);
+
+  const cleanClicked = () => {
+    console.log("Cleaning filters");
+    setCleanFilters(true);
+  };
+
   return (
     <>
       {isMenuOpen && (
@@ -30,14 +39,21 @@ const Filters = () => {
               label="Seleccionar estado"
               name="estado"
               options={statusList}
+              clean={cleanFilters}
             ></ComboBox>
-            <ComboBox label="Seleccionar especie" name="especie"></ComboBox>
+            {/* <ComboBox label="Seleccionar especie" name="especie"></ComboBox> */}
             <ComboBox
               label="Seleccionar ubicación"
               name="ubicacion"
-              test="asd"
               options={locations[0]}
+              clean={cleanFilters}
             ></ComboBox>
+
+            <MyButton
+              variant="contained"
+              label="Limpiar filtros"
+              function={cleanClicked}
+            ></MyButton>
           </div>
 
           <Button onClick={toggleMenu}>Volver</Button>

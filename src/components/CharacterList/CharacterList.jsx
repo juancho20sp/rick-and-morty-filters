@@ -16,15 +16,29 @@ const CharacterList = () => {
   // Query para el filtro por nombre
   const name = useSelector((state) => state.name);
 
+  // Filtro por ubicación
+  const location = useSelector((state) => state.location);
+
+  // Filtro por estado
+  const status = useSelector((state) => state.status);
+
   const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
   useMemo(() => {
-    const result = characters.filter((char) => {
+    let result = characters.filter((char) => {
       return char.name.toLowerCase().includes(name.toLowerCase());
     });
 
+    if (location.length > 0) {
+      result = result.filter((char) => {
+        return char.location.name
+          .toLowerCase()
+          .includes(location.toLowerCase());
+      });
+    }
+
     setFilteredCharacters(result);
-  }, [characters, name]);
+  }, [characters, name, location]);
 
   return (
     <div className="characterList__container">
