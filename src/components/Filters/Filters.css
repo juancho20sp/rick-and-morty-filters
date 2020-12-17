@@ -10,13 +10,12 @@
 
     opacity: 0.95;
 
-
     height: 100vh;
     width: 100vw;
 
     display: grid;
     grid-template-areas: "title""form""return";
-    grid-template: 20% 1fr 40% / 1fr;
+    grid-template: 15% 1fr 35% / 1fr;
 
     z-index: 250;
 }
@@ -38,7 +37,13 @@
     background-color: rgba(255, 255, 255, 1);
     border-radius: 15px;
 
+    height: 100%;
+
     margin: 15px;
+
+
+
+
 
     display: flex;
     flex-direction: column;
@@ -47,11 +52,18 @@
 
 }
 
+.filters__container div.filters__buttons {
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
 .filters__container .MuiSelect-select {
     background-color: white;
     min-width: 250px;
-
 }
 
 
@@ -62,13 +74,15 @@
 
     text-transform: none;
 
-    align-self: flex-start;
+    align-self: center;
 }
 
 
 .filters__container .hide {
     display: none;
 }
+
+
 
 /* Teléfonos pequeños */
 @media screen and (min-width: 320px) {}

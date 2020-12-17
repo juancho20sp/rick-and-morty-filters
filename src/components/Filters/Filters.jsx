@@ -50,11 +50,19 @@ const Filters = () => {
               error={err}
             ></ComboBox>
 
-            <MyButton
-              variant="contained"
-              label="Limpiar filtros"
-              function={resetFilters}
-            ></MyButton>
+            <div className="filters__buttons">
+              <MyButton
+                variant="contained"
+                label="Buscar"
+                function={toggleMenu}
+              ></MyButton>
+
+              <MyButton
+                variant="contained"
+                label="Limpiar filtros"
+                function={resetFilters}
+              ></MyButton>
+            </div>
           </div>
 
           <Button onClick={toggleMenu}>Volver</Button>

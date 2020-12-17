@@ -18,6 +18,23 @@
     color: black;
 
     box-shadow: 0 0 5px rgb(0, 0, 0);
-
-
 }
+
+/* Teléfonos pequeños */
+@media screen and (min-width: 320px) {
+    .myButton.MuiButton-contained {
+        font-size: 1.3rem;
+    }
+}
+
+/* Teléfonos promedio */
+@media screen and (min-width: 480px) {}
+
+/* Tablet promedio */
+@media screen and (min-width: 768px) {}
+
+/* Desktop pequeño */
+@media screen and (min-width: 992px) {}
+
+/* Desktop grande */
+@media screen and (min-width: 1200px) {}
