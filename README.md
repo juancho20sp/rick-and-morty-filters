@@ -22,7 +22,7 @@ If you need to install node, visit this [link.](https://nodejs.org/es/)
 ```javascript
 # In your root folder:
 
-git clone https://github.com/juancho20sp/houm-tech-1.git
+git clone https://github.com/juancho20sp/rick-and-morty-filters
 
 ```
 
